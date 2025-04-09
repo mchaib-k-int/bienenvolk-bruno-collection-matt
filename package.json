@@ -11,6 +11,6 @@
   "author": "",
   "description": "",
   "dependencies": {
-    "@kint/bruno_shared_scripts": "../bruno_shared_scripts"
+    "@k-int/bruno-shared-scripts": "^1.0.0"
   }
 }
