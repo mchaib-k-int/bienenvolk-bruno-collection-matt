@@ -1,0 +1,11 @@
+meta {
+  name: Draft Serial Ruleset
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/serials-management/rulesets/{{latestSerialRuleset.id}}/draft
+  body: none
+  auth: inherit
+}

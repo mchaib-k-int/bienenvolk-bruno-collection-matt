@@ -1,0 +1,139 @@
+meta {
+  name: Replace and Delete Serial Ruleset
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/serials-management/rulesets/{{latestSerialRuleset.id}}/replaceAndDelete
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "rulesetStatus": {
+      "value": "active"
+    },
+    "recurrence": {
+      "timeUnit": {
+        "value": "month"
+      },
+      "period": "1",
+      "issues": "1",
+      "rules": [
+        {
+          "pattern": {
+            "day": "1"
+          },
+          "ordinal": 1,
+          "patternType": "month_date"
+        }
+      ]
+    },
+    "templateConfig": {
+      "rules": [
+        {
+          "templateMetadataRuleType": "chronology",
+          "ruleType": {
+            "ruleLocale": "en",
+            "templateMetadataRuleFormat": "chronology_month",
+            "ruleFormat": {
+              "monthFormat": {
+                "value": "full"
+              },
+              "yearFormat": {
+                "value": "full"
+              }
+            }
+          },
+          "index": 0
+        },
+        {
+          "templateMetadataRuleType": "chronology",
+          "ruleType": {
+            "ruleLocale": "fr",
+            "templateMetadataRuleFormat": "chronology_month",
+            "ruleFormat": {
+              "monthFormat": {
+                "value": "full"
+              },
+              "yearFormat": {
+                "value": "full"
+              }
+            }
+          },
+          "index": 1
+        },
+        {
+          "templateMetadataRuleType": "enumeration",
+          "ruleType": {
+            "templateMetadataRuleFormat": "enumeration_numeric",
+            "ruleFormat": {
+              "levels": [
+                {
+                  "units": "1",
+                  "format": {
+                    "value": "number"
+                  },
+                  "sequence": {
+                    "value": "continuous"
+                  },
+                  "index": 0
+                }
+              ]
+            }
+          },
+          "index": 2
+        },
+        {
+          "templateMetadataRuleType": "enumeration",
+          "ruleType": {
+            "templateMetadataRuleFormat": "enumeration_numeric",
+            "ruleFormat": {
+              "levels": [
+                {
+                  "units": "1",
+                  "format": {
+                    "value": "number"
+                  },
+                  "sequence": {
+                    "value": "continuous"
+                  },
+                  "index": 0
+                },
+                {
+                  "units": "5",
+                  "format": {
+                    "value": "ordinal"
+                  },
+                  "sequence": {
+                    "value": "reset"
+                  },
+                  "index": 1
+                },
+                {
+                  "units": "5",
+                  "format": {
+                    "value": "roman"
+                  },
+                  "sequence": {
+                    "value": "reset"
+                  },
+                  "index": 2
+                }
+              ]
+            }
+          },
+          "index": 3
+        }
+      ],
+      "templateString": "Vol: {{enumeration2.level1}} Iss: {{enumeration2.level2}} {{enumeration1.level1}} {{chronology1.month}} {{chronology1.year}} {{chronology2.month}} {{chronology2.year}}"
+    },
+    "patternType": "month_date",
+    "owner": {
+      "id": "{{latestSerial.id}}"
+    },
+    "rulesetNumber": "THIS IS A REPLACED RULESET DELETE"
+  }
+}
