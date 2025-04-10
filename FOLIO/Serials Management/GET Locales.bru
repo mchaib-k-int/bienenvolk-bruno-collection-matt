@@ -1,0 +1,15 @@
+meta {
+  name: GET Locales
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/serials-management/locales?keyLocales=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  keyLocales: true
+}

@@ -1,0 +1,18 @@
+meta {
+  name: PUT Serial
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/serials-management/serials/{{latestSerial.id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": "{{latestSerial.id}}",
+    "description": "PUT ATTEMPT"
+  }
+}
