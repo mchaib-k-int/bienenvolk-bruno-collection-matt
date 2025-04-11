@@ -1,0 +1,11 @@
+meta {
+  name: Deprecate Serial Ruleset
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/serials-management/rulesets/{{latestSerialRuleset.id}}/deprecated
+  body: none
+  auth: inherit
+}

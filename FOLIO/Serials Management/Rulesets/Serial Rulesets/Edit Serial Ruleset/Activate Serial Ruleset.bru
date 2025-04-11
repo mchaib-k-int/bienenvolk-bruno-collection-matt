@@ -1,0 +1,11 @@
+meta {
+  name: Activate Serial Ruleset
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/serials-management/rulesets/{{latestSerialRuleset.id}}/active
+  body: none
+  auth: inherit
+}

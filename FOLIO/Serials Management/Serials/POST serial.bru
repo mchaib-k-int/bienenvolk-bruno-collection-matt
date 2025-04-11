@@ -1,7 +1,7 @@
 meta {
   name: POST serial
   type: http
-  seq: 4
+  seq: 1
 }
 
 post {
@@ -34,4 +34,9 @@ body:json {
           "acqUnitIds": []
       }
   }
+}
+
+script:post-response {
+  var body = res.getBody()
+  bru.setVar("latestSerial" ,body)
 }

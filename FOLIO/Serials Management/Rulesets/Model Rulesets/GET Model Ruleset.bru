@@ -1,0 +1,11 @@
+meta {
+  name: GET Model Ruleset
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/serials-management/modelRulesets/{{latestModelRuleset.id}}
+  body: none
+  auth: inherit
+}

@@ -1,7 +1,7 @@
 meta {
-  name: POST serial ruleset
+  name: POST Serial Ruleset
   type: http
-  seq: 5
+  seq: 2
 }
 
 post {
@@ -82,7 +82,12 @@ body:json {
           "templateString": "V: {{enumeration1.level1}}. I: {{enumeration1.level2}}. {{chronology1.year}}"
       },
       "owner": {
-          "id": {{latestSerial}}
+          "id": "{{latestSerial.id}}"
       }
   }
+}
+
+script:post-response {
+  var body = res.getBody()
+  bru.setVar("latestSerialRuleset" ,body)
 }
