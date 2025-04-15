@@ -1,10 +1,10 @@
 meta {
-  name: PUT package
+  name: GET Package
   type: http
-  seq: 1
+  seq: 3
 }
 
-put {
+get {
   url: {{baseUrl}}/erm/packages/7b4725e1-2f55-4f14-8cd7-fedc609539c9
   body: text
   auth: none
@@ -12,9 +12,4 @@ put {
 
 params:query {
   ~stats: true
-}
-
-body:text {
-  {
-  }
 }

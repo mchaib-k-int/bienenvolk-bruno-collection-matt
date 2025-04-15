@@ -1,0 +1,17 @@
+meta {
+  name: GET PackageIngressMetadatas
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/erm/packages/metadata?stats=true&perPage=100
+  body: none
+  auth: inherit
+}
+
+params:query {
+  stats: true
+  perPage: 100
+  ~filters: resource.id=cad69310-0199-4644-9f56-697a5fd8c3b0
+}

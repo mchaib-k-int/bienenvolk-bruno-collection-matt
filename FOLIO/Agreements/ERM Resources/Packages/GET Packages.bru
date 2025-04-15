@@ -1,17 +1,18 @@
 meta {
-  name: Get Package Sources
+  name: GET Packages
   type: http
-  seq: 13
+  seq: 1
 }
 
 get {
-  url: {{baseUrl}}/erm/packages/sources?stats=true
+  url: {{baseUrl}}/erm/packages?stats=true&perPage=25
   body: text
   auth: none
 }
 
 params:query {
   stats: true
+  perPage: 25
   ~match: name
   ~match: identifiers.identifier.value
   ~match: alternateResourceNames.name
@@ -19,5 +20,4 @@ params:query {
   ~term: JSTOR : Arts %26 Science
   ~filters: identifiers isNotEmpty
   ~filters: availabilityConstraints isNotEmpty
-  ~perPage: 25
 }

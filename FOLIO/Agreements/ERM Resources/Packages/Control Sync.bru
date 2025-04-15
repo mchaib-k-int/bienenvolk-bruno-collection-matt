@@ -1,0 +1,21 @@
+meta {
+  name: Control Sync
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/erm/packages/controlSync
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      //"packageIds": [],
+      //"packageIds": ["e006941b-cd00-4708-b8bc-03b8ccde31c3", "7b70928b-bb74-4a38-924b-f579db460e26"],
+      "packageIds": ["29731f7d-79ec-44db-b398-7c376a281744"],
+      //"syncState": "PAUSED"
+      "syncState": "SYNCHRONIZING"
+  }
+}
