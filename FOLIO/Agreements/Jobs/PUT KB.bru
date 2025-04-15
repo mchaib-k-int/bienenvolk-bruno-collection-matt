@@ -5,7 +5,7 @@ meta {
 }
 
 put {
-  url: {{baseUrl}}/erm/kbs/{{latestKB}}
+  url: {{baseUrl}}/erm/kbs/3800cef4-2242-4140-a8d6-f0c060b7656f
   body: json
   auth: none
 }
@@ -16,9 +16,26 @@ params:query {
 }
 
 body:json {
+  // {
+  //     "syncStatus": null,
+  //     "cursor": "2022-08-09T16:15:47Z",
+  //     //"active": true
+  // }
+  
   {
-      "syncStatus": null,
-      "cursor": "2022-08-09T16:15:47Z",
-      //"active": true
-  }
+      "id": "3800cef4-2242-4140-a8d6-f0c060b7656f",
+      "cursor": null,
+      "active": true,
+      "trustedSourceTI": false,
+      "activationEnabled": false,
+      "readonly": false,
+      "syncStatus": "idle",
+      "lastCheck": null,
+      "name": "GOKb_TEST",
+      "type": "org.olf.kb.adapters.GOKbOAIAdapter",
+      "fullPrefix": "gokb",
+      "uri": "https://gokbt.gbv.de/gokb/oai/index",
+      "supportsHarvesting": true,
+      "rectype": 1
+    }
 }
