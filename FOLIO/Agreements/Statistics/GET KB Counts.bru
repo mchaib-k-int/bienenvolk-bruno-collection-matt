@@ -1,0 +1,11 @@
+meta {
+  name: GET KB Counts
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/erm/statistics/kbCount
+  body: none
+  auth: inherit
+}

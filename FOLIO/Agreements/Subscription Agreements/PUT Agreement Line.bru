@@ -1,0 +1,39 @@
+meta {
+  name: PUT Agreement Line
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{baseUrl}}/erm/sas/3dcde7eb-72ec-4654-87ee-fdec58f58a80
+  body: json
+  auth: none
+}
+
+params:query {
+  ~offset: 3
+  ~perPage: 3
+  ~filters: orgs.roles.role.value=content_provider
+}
+
+body:json {
+  {
+      "items": [{
+        "resource": {
+          "id": "fb2550ca-cfa9-44a7-8416-36b71bc61a63"
+        }
+      }]
+  }
+  
+}
+
+body:text {
+  {
+      "items": [{
+        "resource": {
+          "id": 
+        }
+      }]
+  }
+  //524ad46e-b657-4512-8bd8-bf85b021f950
+}

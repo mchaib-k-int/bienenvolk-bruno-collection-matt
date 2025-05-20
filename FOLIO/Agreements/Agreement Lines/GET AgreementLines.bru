@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/erm/entitlements?filters=owner.id==05f74be5-fa09-45ab-af61-a25634032c2a&sort=name;asc&stats=true&perPage=100
+  url: {{baseUrl}}/erm/entitlements?sort=name;asc&stats=true&perPage=100
   body: none
   auth: none
 }
 
 params:query {
-  filters: owner.id==05f74be5-fa09-45ab-af61-a25634032c2a
   sort: name;asc
   stats: true
   perPage: 100
+  ~filters: owner.id==05f74be5-fa09-45ab-af61-a25634032c2a
 }

@@ -5,15 +5,15 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/erm/jobs/{{latestJob}}/infoLog?page=37&perPage=100&stats=true
+  url: {{baseUrl}}/erm/jobs/a83f509f-0f2a-4b2c-8890-09a1c00bc704/infoLog?perPage=100&stats=true
   body: none
   auth: none
 }
 
 params:query {
-  page: 37
   perPage: 100
   stats: true
+  ~page: 37
   ~filters: class==org.olf.general.jobs.ComparisonJob
   ~filters: started<=1622205570
 }
